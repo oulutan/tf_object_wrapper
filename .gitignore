@@ -1,0 +1,3 @@
+*.pyc
+weights/tf_zoo
+weights/batched_zoo
