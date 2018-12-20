@@ -1,9 +1,7 @@
 # tf_object_wrapper
 This repository is a wrapper on top of the Tensorflow object detection API. It solves some of its issues and has easy to use scripts to quickly run the detectors.
 
-* For some reason, in tensorflow object_detection API the inputs to the graphs are hardcoded to be a single image. This slows down processing if you have lots of image you want to process. This is solved by updating the graphs to use image_tensors instead of single images as inputs. 
-
-* Also this repo provides easy ways to use the object detectors and visualize them. Reading and 
+* Also this repo provides easy ways to use the object detectors and visualize them. Reading and visualizing requires opencv
 
 ## Installation ##
 
@@ -27,3 +25,4 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 * Tested on Python 2.7 and OpenCV 3.3.0
 
 ## Usage ##
+
