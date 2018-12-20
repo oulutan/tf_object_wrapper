@@ -12,7 +12,7 @@ def test_local_image():
     test_img_path = 'chase.png'
     test_img = cv2.imread(test_img_path)
     
-    ckpt_path = "./weights/zoo/....."
+    ckpt_path = "./weights/tf_zoo/ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb"
     obj_detector = Object_Detector(ckpt_path)
     
     detection_infos = obj_detector.detect_objects_in_np(test_img, expand=True)
@@ -27,7 +27,7 @@ def test_batching_speed():
     test_img_path = 'chase.png'
     test_img = cv2.imread(test_img_path)
     
-    ckpt_path = "./weights/zoo/....."
+    ckpt_path = "./weights/tf_zoo/ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb"
     obj_detector = Object_Detector(ckpt_path)
     
     batch_size = 16
@@ -59,7 +59,7 @@ class Object_Detector():
         if not session:
             config = tf.ConfigProto()
             config.gpu_options.allow_growth = True
-            session = tf.Session(graph=detection_graph, config=config)
+            session = tf.Session(graph=self.detection_graph, config=config)
         self.session = session
 
     def detect_objects_in_np(self, image_np, expand=False):
