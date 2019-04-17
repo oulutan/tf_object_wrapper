@@ -6,6 +6,9 @@ import time
 #import cv2 # Imported within functions, dont import unless needed
 
 
+def get_3_decimal_float(infloat):
+    return float("%.3f" % infloat)
+
 def test_local_image():
     # Reading and Displaying images need opencv
     import cv2
